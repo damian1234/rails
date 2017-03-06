@@ -36,4 +36,4 @@ group :production do
   gem 'unicorn'
 end
 
-new gem
+gem "simple_calendar", "~> 2.0"
