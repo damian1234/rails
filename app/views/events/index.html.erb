@@ -29,12 +29,12 @@
 <br>
 <br>
 <%= month_calendar events: @events do |date, events| %>
-  <%= date.day %>
+  <span class="calendar-date-num"><%= date.day %></span>
   
 
   <% events.each do |event| %>
     <div>
-      <%= event.name %>
+      <h6><b><%= event.name %></b></h6>
     </div>
   <% end %>
 <% end %>
