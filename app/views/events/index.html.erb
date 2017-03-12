@@ -2,39 +2,44 @@
 
 <h1>Events</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Start time</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.start_time %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= link_to 'New Event', new_event_path, class: "btn btn-default" %>
-<br>
 <br>
 <%= month_calendar events: @events do |date, events| %>
-  <span class="calendar-date-num"><%= date.day %></span>
+  <div class="calendar-date-num"><%= date.day %></div>
   
-
   <% events.each do |event| %>
     <div>
-      <h6><b><%= event.name %></b></h6>
+      <h6><%= event.start_time.to_s(:time) %> - <b><%= event.name %></b></h6>
     </div>
   <% end %>
+  
+<% end %>
+
+<br>
+
+<% if current_user.try(:admin?) %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Start time</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= event.start_time %></td>
+          <td><%= link_to 'Show', event %></td>
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <%= link_to 'New Event', new_event_path, class: "btn btn-default" %>
+
 <% end %>
