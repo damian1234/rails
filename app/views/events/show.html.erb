@@ -10,7 +10,7 @@
   <%= @event.start_time %>
 </p>
 
-<td><%= if current_user.admin %></td>
+<td><% if current_user.admin %></td>
   <%= link_to 'Edit', edit_event_path(@event) %> |
-<td><%= end%></td>
+<td><% end%></td>
 <%= link_to 'Back', events_path %>
