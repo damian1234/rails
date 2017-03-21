@@ -5,6 +5,6 @@ class TakeQuizzesController < ApplicationController
         @quizzes = Quiz.all
     end
     def take
-        
+        @take_quiz = Quiz.find(params['take_quiz_id'])
     end
 end

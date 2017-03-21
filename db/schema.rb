@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170314115532) do
   create_table "quizzes", force: :cascade do |t|
     t.string   "name"
     t.integer  "number_of_questions"
+    t.integer  "questions_made"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -34,12 +35,16 @@ ActiveRecord::Schema.define(version: 20170314115532) do
     t.integer  "weight"
     t.string   "answer1"
     t.string   "field1"
+    t.boolean  "select1"
     t.string   "answer2"
     t.string   "field2"
+    t.boolean  "select2"
     t.string   "answer3"
     t.string   "field3"
+    t.boolean  "select3"
     t.string   "answer4"
     t.string   "field4"
+    t.boolean  "select4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

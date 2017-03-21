@@ -13,7 +13,7 @@
   <strong>Quiz questions:</strong>
     <% if @quiz.the_questions %>
       <% @quiz.the_questions.each do |question| %>
-      <p><%= question %></p>
+      <p><%= question.question %></p>
       <% end %>
     <% end %>
 </p>

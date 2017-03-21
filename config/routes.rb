@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resources :take_quizzes do
-    get 'take', to: 'take_quizzes#take'
-  end
   resources :courses
-  resources :the_question
   resources :quizzes do
     resources :the_questions
+  end
+  resources :take_quizzes do
+    get 'take', to: 'take_quizzes#take'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

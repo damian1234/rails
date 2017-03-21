@@ -21,28 +21,11 @@ class QuizzesController < ApplicationController
   def edit
   end
   
-
-  def add_question
-    @the_question = TheQuestion.new(the_question_params)
-  end
-  
-  def create_question
-    @the_question = TheQuestion.new(the_question_params)
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to @add_question, notice: 'Question added!' }
-        format.json { render :add, status: :created, location: @quiz }
-      else
-        format.html { render :add }
-        format.json { render json: @quiz.errors, status: :unprocessable_entity }
-      end
-    end
-  end
   # POST /quizzes
   # POST /quizzes.json
   def create
     @quiz = Quiz.new(quiz_params)
-
+    @quiz.questions_made = 0
     respond_to do |format|
       if @quiz.save
         format.html { redirect_to @quiz, notice: 'Quiz was successfully created.' }

@@ -25,11 +25,12 @@ class TheQuestionsController < ApplicationController
   # POST /the_questions
   # POST /the_questions.json
   def create
+    @quiz = Quiz.find(params['quiz_id'])
     @the_question = TheQuestion.new(the_question_params)
-
+    @the_question.quiz_id = @quiz.id
     respond_to do |format|
       if @the_question.save
-        format.html { redirect_to @the_question, notice: 'The question was successfully created.' }
+        format.html { redirect_to @quiz, notice: 'The question was successfully created.' }
         format.json { render :show, status: :created, location: @the_question }
       else
         format.html { render :new }
