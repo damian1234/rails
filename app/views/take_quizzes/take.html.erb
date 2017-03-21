@@ -1,33 +1,3 @@
 <h1>Take Quiz</h1>
 
-<%= form_for(@take_quiz) do |f| %>
-  <div>
-    <%= (@take_quiz.the_questions).each do |question| %>
-    <tr>
-        <label><%= question.question %></label>
-        <div></div>
-        <label> <input type = "radio" name = "ans" value = "1"/><%= question.answer1 %></label>
-        <label> <input type = "radio" name = "ans" value = "2"/><%= question.answer2 %></label>
-        <label> <input type = "radio" name = "ans" value = "3"/><%= question.answer3 %></label>
-        <label> <input type = "radio" name = "ans" value = "4"/><%= question.answer4 %></label>
-        <% if ans ==1 %>
-          <%= question.select1=true %>
-        <% end %>
-        <% if ans ==2 %>
-          <%= question.select2=true %>
-        <% end %>
-        <% if ans ==3 %>
-          <%= question.select3=true %>
-        <% end %>
-        <% if ans ==4 %>
-          <%= question.select4=true %>
-        <% end %>
-        </br>
-    </tr>
-    </br>
-    <% end %>
-  </div
-  <div class="actions">
-      <%= f.submit %>
-  </div>
-<% end %>
+<%= render "form" %>

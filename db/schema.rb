@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314115532) do
+ActiveRecord::Schema.define(version: 20170315114951) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "field"
@@ -29,22 +29,24 @@ ActiveRecord::Schema.define(version: 20170314115532) do
     t.datetime "updated_at",          null: false
   end
 
+  create_table "take_quizzes", force: :cascade do |t|
+    t.string   "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "the_questions", force: :cascade do |t|
     t.integer  "quiz_id"
     t.string   "question"
     t.integer  "weight"
     t.string   "answer1"
     t.string   "field1"
-    t.boolean  "select1"
     t.string   "answer2"
     t.string   "field2"
-    t.boolean  "select2"
     t.string   "answer3"
     t.string   "field3"
-    t.boolean  "select3"
     t.string   "answer4"
     t.string   "field4"
-    t.boolean  "select4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
