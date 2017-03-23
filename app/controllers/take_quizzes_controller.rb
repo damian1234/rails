@@ -5,7 +5,7 @@ class TakeQuizzesController < ApplicationController
         @quizzes = Quiz.all
     end
     def take
-        @quiz = Quiz.find(params['take_quiz_id'])
+        @quiz = Quiz.find(params['quiz_id'])
         @take_quiz = TakeQuiz.new
     end
     
@@ -24,6 +24,9 @@ class TakeQuizzesController < ApplicationController
         end
     end
     
+    def set_quiz
+      @quiz = Quiz.find(params[:id])
+    end
     
     def set_take_quiz
       @take_quiz = TakeQuiz.find(params[:id])
