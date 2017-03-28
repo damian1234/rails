@@ -11,10 +11,38 @@
       <h6><%= event.start_time.to_s(:time) %> - <b><%= event.name %></b></h6>
     </div>
   <% end %>
-  
 <% end %>
 
+<!--
+list = [0,1,2,3,...n] list of indices
+for(int i, etc){
+  for(int j etc){
+    if(events[list[i]] > events[list[j]){
+     swap the elements
+      temp = events[list[i]
+      events[list[i]] = events[list[j]]
+      events[list[j]] = temp
+    }
+  }
+}
+-->
+
+<% @events.sort_by(&:start_time) %>
+
+<!--
 <br>
+<p>test: print events iteratively</p>
+<br>
+<% i = 0 %>
+<% until i == @events.size  %>
+  <%= @events[i].name %>
+  <br>
+  <p> should have printed </p>
+  <br>
+  <% i = i + 1 %>
+<% end %>
+<p>end print</p>
+-->
 
 <% if current_user.try(:admin?) %>
 
@@ -28,7 +56,7 @@
     </thead>
   
     <tbody>
-      <% @events.each do |event| %>
+      <% @events.each do |event, events, date| %>
         <tr>
           <td><%= event.name %></td>
           <td><%= event.start_time %></td>

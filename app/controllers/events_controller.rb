@@ -6,11 +6,14 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    @events = @events.sort_by(&:start_time)
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @events = Event.all
+    
   end
 
   # GET /events/new
