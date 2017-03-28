@@ -81,5 +81,5 @@ class EventsController < ApplicationController
         flash[:danger] ="Unauthorized: Only admin accounts can create/edit events"
         redirect_to action: "index" #? can I just have a URL here?
       end
-    end
+     end
 end
