@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  #before_action :require_admin , except: [:index, :show]
+  before_action :require_admin , except: [:index, :show]
   
   def index
     @articles = Article.all
