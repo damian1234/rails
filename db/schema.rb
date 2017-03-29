@@ -31,9 +31,48 @@ ActiveRecord::Schema.define(version: 20170328130817) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
+  create_table "courses", force: :cascade do |t|
+    t.string   "field"
+    t.string   "name"
+    t.integer  "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "number_of_questions"
+    t.integer  "questions_made"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "take_quizzes", force: :cascade do |t|
+    t.string   "answer"
+    t.integer  "number_of_questions"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "the_questions", force: :cascade do |t|
+    t.integer  "quiz_id"
+    t.string   "question"
+    t.integer  "weight"
+    t.string   "answer1"
+    t.string   "field1"
+    t.string   "answer2"
+    t.string   "field2"
+    t.string   "answer3"
+    t.string   "field3"
+    t.string   "answer4"
+    t.string   "field4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

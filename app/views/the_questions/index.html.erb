@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing The Questions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Weight</th>
+      <th>Answer1</th>
+      <th>Field1</th>
+      <th>Answer2</th>
+      <th>Field2</th>
+      <th>Answer3</th>
+      <th>Field3</th>
+      <th>Answer4</th>
+      <th>Field4</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @the_questions.each do |the_question| %>
+      <tr>
+        <td><%= the_question.question %></td>
+        <td><%= the_question.weight %></td>
+        <td><%= the_question.answer1 %></td>
+        <td><%= the_question.field1 %></td>
+        <td><%= the_question.answer2 %></td>
+        <td><%= the_question.field2 %></td>
+        <td><%= the_question.answer3 %></td>
+        <td><%= the_question.field3 %></td>
+        <td><%= the_question.answer4 %></td>
+        <td><%= the_question.field4 %></td>
+        <td><%= link_to 'Show', the_question %></td>
+        <td><%= link_to 'Edit', edit_the_question_path(the_question) %></td>
+        <td><%= link_to 'Destroy', the_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New The question', new_the_question_path %>

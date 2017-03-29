@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @the_question.question %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @the_question.weight %>
+</p>
+
+<p>
+  <strong>Answer1:</strong>
+  <%= @the_question.answer1 %>
+</p>
+
+<p>
+  <strong>Field1:</strong>
+  <%= @the_question.field1 %>
+</p>
+
+<p>
+  <strong>Answer2:</strong>
+  <%= @the_question.answer2 %>
+</p>
+
+<p>
+  <strong>Field2:</strong>
+  <%= @the_question.field2 %>
+</p>
+
+<p>
+  <strong>Answer3:</strong>
+  <%= @the_question.answer3 %>
+</p>
+
+<p>
+  <strong>Field3:</strong>
+  <%= @the_question.field3 %>
+</p>
+
+<p>
+  <strong>Answer4:</strong>
+  <%= @the_question.answer4 %>
+</p>
+
+<p>
+  <strong>Field4:</strong>
+  <%= @the_question.field4 %>
+</p>
+
+<%= link_to 'Edit', edit_the_question_path(@the_question) %> |
+<%= link_to 'Back', the_questions_path %>

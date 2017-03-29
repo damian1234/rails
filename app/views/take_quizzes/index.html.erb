@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<tbody>
+    <% @quizzes.each do |quiz| %>
+      <tr>
+        <td><%= quiz.name %></td>
+        <td><%= link_to 'take', take_quiz_take_url do id: => quiz.id %></td>
+      </tr>
+    <% end %>
+  </tbody>

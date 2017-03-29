@@ -1,0 +1,2 @@
+json.extract! the_question, :id, :question, :weight, :answer1, :field1, :answer2, :field2, :answer3, :field3, :answer4, :field4, :created_at, :updated_at
+json.url the_question_url(the_question, format: :json)

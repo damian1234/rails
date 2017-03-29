@@ -1,0 +1,33 @@
+<%= form_for(@take_quiz) do |f| %>
+<% if @take_quiz.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@take_quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
+
+      <ul>
+      <% @take_quiz.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= (quiz.the_questions).each do |question| %>
+    <tr>
+        <label><%= question.question %></label>
+        <div></div>
+        <form>
+          <input type = "radio" name = "answer" value = "ans1"/><%= question.answer1 %>
+          <input type = "radio" name = "answer" value = "ans2"/><%= question.answer2 %>
+          <input type = "radio" name = "answer" value = "ans3"/><%= question.answer3 %>
+          <input type = "radio" name = "answer" value = "ans4"/><%= question.answer4 %>
+          <input type="submit" value="Submit">
+        </form>
+        </br>
+    </tr>
+    </br>
+    <% end %>
+  </div
+  <div class="actions">
+      <%= f.submit %>
+  </div>
+<% end %>
